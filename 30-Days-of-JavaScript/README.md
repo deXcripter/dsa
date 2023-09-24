@@ -1,8 +1,8 @@
 # TASKS
 
 ## Closures
-### Tasks                                Difficulty
-Create Hello World Function              Easy
-Counter                                  Easy
-To Be Or Not To Be                       Easy
-Counter II                               Easy
+
+1. Create Hello World Function
+2. Counter
+3. To Be Or Not To Be
+4. Counter II
