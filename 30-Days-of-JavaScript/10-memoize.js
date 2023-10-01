@@ -13,18 +13,14 @@ function memoize(fn) {
     }
     records[check] = fn(...args);
     return records[check];
-
-    return record[number];
   };
 }
 
-/**
- * let callCount = 0;
- * const memoizedFn = memoize(function (a, b) {
- *	 callCount += 1;
- *   return a + b;
- * })
- * memoizedFn(2, 3) // 5
- * memoizedFn(2, 3) // 5
- * console.log(callCount) // 1
- */
+// let callCount = 0;
+// const memoizedFn = memoize(function (a, b) {
+//   callCount += 1;
+//   return a + b;
+// });
+// memoizedFn(2, 3); // 5
+// memoizedFn(2, 3); // 5
+// console.log(callCount); // 1
