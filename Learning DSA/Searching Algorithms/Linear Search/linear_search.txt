@@ -1,5 +1,0 @@
-Linear search is searching for a value in an array, one after another; beginnig from either the beginning or end of the array. 
-
-Some examples of JavaScript method using linear search: 
- - indexOf()
- - includes()
