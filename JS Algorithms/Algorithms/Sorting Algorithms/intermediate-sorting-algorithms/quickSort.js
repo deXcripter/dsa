@@ -28,10 +28,10 @@ const quickSort = (arr, left=0, right=arr.length - 1) => {
 }
 
 
-/* 
-Best time complexity: O(n log n)
-Worrst time complexity: O(n2)
-Best time complexity: O(n log n)
+/**
+* Best time complexity: O(n log n)
+* Worst time complexity: O(n2)
+* Average time complexity: O(n log n)
 
-Space complexity: O(log n)
-*/
+* Space complexity: O(log n)
+**/
