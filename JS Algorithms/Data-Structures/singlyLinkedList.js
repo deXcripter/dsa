@@ -91,18 +91,17 @@ class SinglyLinkedList {
     }
     return current;
   }
-}
 
- // SET 
+  // SET
 
- set (value, index) {
-  const keyValue = this.get(index)
-  if(keyValue)
-   {
-    keyValue.val = value;
-    return true;
+  set(value, index) {
+    const keyValue = this.get(index);
+    if (keyValue) {
+      keyValue.val = value;
+      return true;
+    }
+    return false;
   }
-  return false;
 }
 const list = new SinglyLinkedList();
 
