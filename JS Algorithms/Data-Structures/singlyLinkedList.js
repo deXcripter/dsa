@@ -13,73 +13,69 @@ class SinglyLinkedList {
     this.length = 0;
   }
 
-  // 1) PUSH
+  // PUSH METHOD
 
   push(val) {
     const newNode = new Node(val);
-
     if (!this.head) {
       this.head = newNode;
-      this.tail = newNode;
+      this.tail = this.head;
     } else {
       this.tail.next = newNode;
       this.tail = newNode;
     }
     this.length += 1;
+    return this;
   }
 
-  // 2) POP
+  // POP METHOD
 
   pop() {
     if (!this.head) return undefined;
-    let iteration = this.head;
-    let newTail = null;
-    while (iteration.next) {
-      newTail = iteration;
-      iteration = iteration.next;
+    let current = this.head;
+    let newTail = current;
+    while (current.next) {
+      newTail = current;
+      current = current.next;
     }
     this.tail = newTail;
-    if (this.length > 1) {
-      this.tail.next = null;
-    }
-    if (!this.length) return undefined;
+    this.tail.next = null;
     this.length -= 1;
-    return iteration;
+    if (this.length === 0) {
+      this.head = null;
+      this.tail = null;
+    }
+    return current;
   }
 
-  // SHIFT
+  // SHIFT METHOD
 
   shift() {
     if (!this.head) return undefined;
-    const oldHead = this.head;
-    this.head = oldHead.next;
+    const currentHead = this.head;
+    this.head = currentHead.next;
     this.length -= 1;
-
     if (this.length === 0) {
       this.tail = null;
     }
-
-    return oldHead;
+    return currentHead;
   }
 
-  // UNSHIFT
+  // UNSHIFT METHOD
 
   unshift(val) {
     const newNode = new Node(val);
-
     if (!this.head) {
       this.head = newNode;
       this.tail = this.head;
-    } else {
-      const oldHead = this.head;
-      this.head = newNode;
-      newNode.next = oldHead;
     }
+    newNode.next = this.head;
+    this.head = newNode;
     this.length += 1;
     return this;
   }
 
-  // GET
+  // GET METHOD
 
   get(index) {
     if (index < 0 || index >= this.length) return null;
@@ -92,17 +88,37 @@ class SinglyLinkedList {
     return current;
   }
 
-  // SET
+  // SET METHOD
 
-  set(value, index) {
-    const keyValue = this.get(index);
-    if (keyValue) {
-      keyValue.val = value;
+  set(index, val) {
+    const foundNode = this.get(index);
+    if (foundNode) {
+      foundNode.val = val;
       return true;
     }
     return false;
   }
+
+  // INSERT METHOD
+
+  insert(index, val) {
+    if (index < 0 || index > this.length) return false;
+    if (index === this.length) return !!this.push(val);
+    if (index === 0) return !!this.unshift(val);
+
+    const newNode = new Node(val);
+    const prev = this.get(index - 1);
+    const temp = prev.next;
+    prev.next = newNode;
+    newNode.next = temp;
+    this.length += 1;
+    return true;
+  }
 }
+
 const list = new SinglyLinkedList();
 
-list.push(20);
+list.push(100);
+list.push(201);
+list.push(250);
+list.push(350);
