@@ -93,6 +93,17 @@ class SinglyLinkedList {
   }
 }
 
+ // SET 
+
+ set (value, index) {
+  const keyValue = this.get(index)
+  if(keyValue)
+   {
+    keyValue.val = value;
+    return true;
+  }
+  return false;
+}
 const list = new SinglyLinkedList();
 
 list.push(20);
