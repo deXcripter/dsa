@@ -115,16 +115,16 @@ class SinglyLinkedList {
     return true;
   }
 
-  // remove(index) {
-  //   if (index < 0 || index > this.length) return undefined;
-  //   if (index === 0) this.shift(index);
-  //   if (index === this.length - 1) this.pop(index);
-  //   const previousNode = this.get(index - 1);
-  //   const removed = previousNode.next;
-  //   previousNode.next = removed.next;
-  //   this.length -= 1;
-  //   return removed;
-  // }
+  remove(index) {
+    if (index < 0 || index > this.length) return undefined;
+    if (index === 0) return this.shift(index);
+    if (index === this.length - 1) return this.pop(index);
+    const previousNode = this.get(index - 1);
+    const removed = previousNode.next;
+    previousNode.next = removed.next;
+    this.length -= 1;
+    return removed;
+  }
 }
 
 const list = new SinglyLinkedList();
@@ -134,4 +134,4 @@ list.push(201);
 list.push(250);
 list.push(350);
 
-console.log(list.insert(0, 100), list);
+console.log(list.remove(0), list);
