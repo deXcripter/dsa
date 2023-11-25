@@ -115,6 +115,8 @@ class SinglyLinkedList {
     return true;
   }
 
+  // REMOVE METHOD
+
   remove(index) {
     if (index < 0 || index > this.length) return undefined;
     if (index === 0) return this.shift(index);
@@ -124,6 +126,24 @@ class SinglyLinkedList {
     previousNode.next = removed.next;
     this.length -= 1;
     return removed;
+  }
+
+  // REVERSE
+
+  reverse() {
+    let node = this.head;
+    this.head = this.tail;
+    this.tail = node;
+    let prev = null;
+    let next = null;
+
+    for (let i = 0; i < this.length; i++) {
+      next = node.next;
+      node.next = prev;
+      prev = node;
+      node = next;
+    }
+    return this;
   }
 }
 
