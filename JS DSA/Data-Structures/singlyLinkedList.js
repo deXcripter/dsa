@@ -137,7 +137,7 @@ class SinglyLinkedList {
     let prev = null;
     let next = null;
 
-    for (let i = 0; i < this.length; i++) {
+    for (let i = 0; i < this.length; i += 1) {
       next = node.next;
       node.next = prev;
       prev = node;
@@ -147,11 +147,5 @@ class SinglyLinkedList {
   }
 }
 
+// eslint-disable-next-line no-unused-vars
 const list = new SinglyLinkedList();
-
-list.push(100);
-list.push(201);
-list.push(250);
-list.push(350);
-
-console.log(list.remove(0), list);
