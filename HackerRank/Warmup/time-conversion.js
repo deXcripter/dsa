@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 /* eslint-disable eqeqeq */
 
 function timeConversion(s) {
@@ -20,3 +21,5 @@ function timeConversion(s) {
 }
 
 console.log(timeConversion('1:02:02PM'));
+
+// converts time format from 12 hours to 24 hours ⏱️
