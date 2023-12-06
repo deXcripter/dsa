@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 function miniMaxSum(arr) {
   let mini = arr[0] + arr[1] + arr[2] + arr[3];
   let max = 0;
