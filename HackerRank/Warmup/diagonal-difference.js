@@ -1,5 +1,5 @@
 /* eslint-disable eqeqeq */
-/* The positve difference between the left and right sides of a multidimension array */
+/* The positve difference between the left and right sides of a multidimension array (3x3)*/
 
 function diagonalDifference(arr) {
   let rightDiagonal = 0;
@@ -16,13 +16,13 @@ function diagonalDifference(arr) {
   return Math.abs(rightDiagonal - leftDiagonal);
 }
 
-// console.log(
-//   diagonalDifference([
-//     [1, 2, 3],
-//     [4, 5, 6],
-//     [9, 8, 9],
-//   ]),
-// );
+console.log(
+  diagonalDifference([
+    [1, 2, 3],
+    [4, 5, 6],
+    [9, 8, 9],
+  ]),
+);
 
 // console.log(
 //   diagonalDifference([
