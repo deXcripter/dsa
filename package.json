@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/dexcription/Data-Strustures-Algorithms/issues"
   },
-  "homepage": "https://github.com/dexcription/Data-Strustures-Algorithms#readme"
+  "homepage": "https://github.com/dexcription/Data-Strustures-Algorithms#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
 }
