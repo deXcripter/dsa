@@ -1,9 +1,11 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const checkPalendrome = (val) => {
-    if (typeof val !== 'string')
+const isPalendrome = (val) => {
+    // only works on strings
+    if (typeof val !== "string")
         return Error(`${val} is not a string`);
-    console.log(val, typeof val);
+    // reverse the strings
+    const reversed = val.split("").reverse().join("");
+    // return true or false
+    return reversed === val;
 };
-checkPalendrome(29);
-exports.default = checkPalendrome;
+module.exports = isPalendrome;

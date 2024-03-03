@@ -1,26 +1,15 @@
 {
-  "name": "dsa-ts",
+  "name": "data-strustures-algorithms",
   "version": "1.0.0",
-  "description": "das in capsle",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dexcription/Data-Strustures-Algorithms.git"
-  },
-  "keywords": [
-    "dsa",
-    "typescript"
-  ],
-  "author": "johnpaul",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/dexcription/Data-Strustures-Algorithms/issues"
-  },
-  "homepage": "https://github.com/dexcription/Data-Strustures-Algorithms#readme",
-  "devDependencies": {
-    "nodemon": "^3.1.0"
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^20.11.24"
   }
 }

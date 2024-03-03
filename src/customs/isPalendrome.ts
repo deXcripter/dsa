@@ -1,8 +1,12 @@
-const checkPalendrome = (val: unknown) => {
-  if (typeof val !== 'string') return Error(`${val} is not a string`);
-  console.log(val, typeof val);
+const isPalendrome = (val: unknown) => {
+  // only works on strings
+  if (typeof val !== "string") return Error(`${val} is not a string`);
+
+  // reverse the strings
+  const reversed = val.split("").reverse().join("");
+
+  // return true or false
+  return reversed === val;
 };
 
-checkPalendrome('29');
-
-export default checkPalendrome;
+export = isPalendrome;
