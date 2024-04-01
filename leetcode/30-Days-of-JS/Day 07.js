@@ -6,10 +6,9 @@
  */
 var reduce = function (nums, fn, init) {
   let total = init;
-  let final = 0;
 
   nums.forEach((num, i) => {
-    total += fn(total, num);
+    total = fn(total, num);
   });
 
   return total;
