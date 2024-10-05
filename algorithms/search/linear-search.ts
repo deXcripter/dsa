@@ -16,4 +16,4 @@ const linearSearch = (arr: number[], val: number) => {
   return -1;
 };
 
-console.log(linearSearch([1, 2, 4, 6, 4, 2, 2, 21], 2));
+export default linearSearch;
