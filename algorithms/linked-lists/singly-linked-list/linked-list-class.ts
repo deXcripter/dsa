@@ -41,12 +41,19 @@ class SinglyLinkedList {
     }
   }
 
-  pop(val: strint) {}
+  traverse() {
+    let current = this.head;
+    while (current) {
+      console.log(current);
+      current = current.next;
+    }
+  }
 }
 
 const node = new SinglyLinkedList();
 node.push("Hi");
 node.push("There");
 node.push("Chiamaka");
+node.traverse();
 
-console.log(node);
+//console.log(node);
