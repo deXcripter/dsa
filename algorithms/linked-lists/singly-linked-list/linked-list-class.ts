@@ -1,15 +1,19 @@
-type strnum = string | number;
+type strint = string | number;
 
+/**
+ * This is the class responsible for creating nodes
+ */
 class _Node {
-  value: strnum;
+  value: strint;
   next: _Node | null;
 
-  constructor(value: strnum) {
+  constructor(value: strint) {
     this.value = value;
     this.next = null;
   }
 }
 
+//  * This class is responsible for manging and organizing nodes.
 class SinglyLinkedList {
   head: _Node | null;
   tail: _Node | null;
@@ -20,25 +24,29 @@ class SinglyLinkedList {
     this.tail = null;
     this.length = 0;
   }
-
-  push(val: strnum) {
-    let node = new _Node(val);
+  /**
+   * PUSH LOGIC
+   * When a new node is created, it sets the new node as the head and tail of the linked list.
+   * If another node is added via a push method, it first makes the head point at the new node,
+   * then set the new node as the current tail in the list
+   */
+  push(val: strint) {
+    const node = new _Node(val);
     if (!this.head) {
       this.head = node;
-      this.tail = this.head;
+      this.tail = node;
     } else {
       this.tail!.next = node;
       this.tail = node;
     }
-    this.length++;
-    return this;
   }
+
+  pop(val: strint) {}
 }
 
-const hi = new SinglyLinkedList();
-hi.push("Hi there");
-hi.push("Who are you");
-hi.push("Im no one man");
-hi.push("Im not so certain");
+const node = new SinglyLinkedList();
+node.push("Hi");
+node.push("There");
+node.push("Chiamaka");
 
-console.log(hi);
+console.log(node);
