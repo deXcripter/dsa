@@ -96,7 +96,7 @@ class SinglyLinkedList {
     return this;
   }
 
-  get(index: number): strint | null {
+  get(index: number) {
     if (!this.head) return null;
     if (index < 0 || index >= this.length) return null;
 
@@ -104,20 +104,18 @@ class SinglyLinkedList {
     let current = this.head;
 
     while (counter < this.length) {
-      if (counter === index) return current.value;
+      if (counter === index) return current;
       current = current.next || current;
       counter++;
     }
-
     return -1;
   }
 }
 
 const node = new SinglyLinkedList();
-node.push("Hi");
-node.push("There");
-node.push("Chiamaka");
-node.unshift("Yoo");
-node.unshift("hehe");
-const vl = node.get(4);
-console.log(vl);
+
+/**
+ * Exporting the SinglyLinkedList class
+ */
+
+export { SinglyLinkedList };
