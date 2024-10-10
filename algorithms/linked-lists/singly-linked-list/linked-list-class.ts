@@ -43,11 +43,9 @@ class SinglyLinkedList {
     return this;
   }
 
-  traverse() {
+  traverseEntireList() {
     let current = this.head;
-    while (current) {
-      current = current.next;
-    }
+    while (current) current = current.next;
   }
 
   pop() {
@@ -93,9 +91,25 @@ class SinglyLinkedList {
       this.head = newNode;
       newNode.next = oldHead;
     }
-    this.length++;
 
+    this.length++;
     return this;
+  }
+
+  get(index: number): strint | null {
+    if (!this.head) return null;
+    if (index < 0 || index >= this.length) return null;
+
+    let counter = 0;
+    let current = this.head;
+
+    while (counter < this.length) {
+      if (counter === index) return current.value;
+      current = current.next || current;
+      counter++;
+    }
+
+    return -1;
   }
 }
 
@@ -105,5 +119,5 @@ node.push("There");
 node.push("Chiamaka");
 node.unshift("Yoo");
 node.unshift("hehe");
-
-console.log(node);
+const vl = node.get(4);
+console.log(vl);
