@@ -70,6 +70,17 @@ class SinglyLinkedList {
     }
     return current;
   }
+
+  shift() {
+    if (!this.head) return undefined;
+
+    let oldHead = this.head;
+    this.head.next?.value ? (this.head = this.head.next) : (this.head = null);
+    this.length--;
+    if (this.length === 0) this.tail = null;
+
+    return oldHead;
+  }
 }
 
 const node = new SinglyLinkedList();
@@ -77,11 +88,10 @@ node.push("Hi");
 node.push("There");
 node.push("Chiamaka");
 node.push("My");
+node.push("friend");
 node.pop();
-node.pop();
-node.pop();
-node.pop();
-node.pop();
-node.pop();
+node.push("darling");
+node.shift();
+node.shift();
 
 console.log(node);
