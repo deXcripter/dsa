@@ -81,17 +81,29 @@ class SinglyLinkedList {
 
     return oldHead;
   }
+
+  unshift(value: strint) {
+    let newNode = new _Node(value);
+
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = this.head;
+    } else {
+      let oldHead = this.head;
+      this.head = newNode;
+      newNode.next = oldHead;
+    }
+    this.length++;
+
+    return this;
+  }
 }
 
 const node = new SinglyLinkedList();
 node.push("Hi");
 node.push("There");
 node.push("Chiamaka");
-node.push("My");
-node.push("friend");
-node.pop();
-node.push("darling");
-node.shift();
-node.shift();
+node.unshift("Yoo");
+node.unshift("hehe");
 
 console.log(node);
