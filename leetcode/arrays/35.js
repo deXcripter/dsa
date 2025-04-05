@@ -4,7 +4,6 @@
  * @return {number}
  */
 var searchInsert = function (nums, target) {
-  // handle the case where it is one
   let leftPointer = 0;
   let rightPointer = nums.length - 1;
   let middle;
