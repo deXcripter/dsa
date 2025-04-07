@@ -14,11 +14,7 @@ function groupAnagrams(strs: string[]): string[][] {
     }
   }
 
-  for (const val of map) {
-    outputArr.push(val[1]);
-  }
-
-  return outputArr;
+  return Array.from(map.values());
 }
 
 console.log(
