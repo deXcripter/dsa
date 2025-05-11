@@ -10,17 +10,6 @@ type Obj = Record<string, JSONValue> | Array<JSONValue>;
 function compactObject(obj: Obj): Obj {
   const isArray = Array.isArray(obj);
   const newObj: Obj = isArray ? [] : {};
-  /**
-   * check if the arguement is an array.
-   *
-   *    If array, loop through all properties in the array and
-   *        if the present element is not an array, and is a falsy value, splice it.
-   *        else, if an array, call the function again with the array.
-   *
-   *    If object, loop through the object using the for..in loop.
-   *        if the present key value is an array, call the function with the array recursively.
-   *        else if falsy, delete the key.
-   */
 
   if (isArray) {
     for (let i = 0; i < obj.length; i++) {
@@ -28,7 +17,6 @@ function compactObject(obj: Obj): Obj {
         const val = compactObject(obj[i] as Obj);
         Array.isArray(newObj) && newObj.push(val);
       } else if (obj[i] && typeof obj[i] !== "object") {
-        // console.log(obj[i], "is not falsy and is", Array.isArray(newObj));
         Array.isArray(newObj) && newObj.push(obj[i]);
       } else if (obj[i]) {
         (newObj as JSONValue[]).push(compactObject(obj[i] as Obj));
