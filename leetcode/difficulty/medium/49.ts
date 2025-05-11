@@ -1,7 +1,6 @@
 // link -> https://leetcode.com/problems/group-anagrams/description/
 
 function groupAnagrams(strs: string[]): string[][] {
-  let outputArr = new Array();
   let map: Map<string, string[]> = new Map();
 
   for (let i = 0; i < strs.length; i++) {
